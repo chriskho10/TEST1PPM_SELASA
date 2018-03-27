@@ -1,0 +1,156 @@
+<html>
+<head>
+	<meta name=viewport content="user-scalable=no,width=device-width"/>
+	<link rel=stylesheet href=jquery.mobile-1.4.5.css />
+	<script src=jquery.js></script>
+	<script src=jquery.mobile-1.4.5.js></script>
+	<script src=jscolor.js></script>
+	<script type="text/javascript">
+		function pangkat()
+		{
+			var angka = $("#bilangan").val();
+			var pangkat = $("#pangkat").val();
+			var hasil = Math.pow(angka,pangkat);
+			document.getElementById('result').innerHTML = hasil;
+		}
+
+		function faktorial()
+		{
+			var n = $("#angka").val();
+			var hasil;
+
+			if(n == 0)
+	{
+ 		hasil = 1;
+	}
+			else
+	{
+ 		hasil = n;
+ 		for (i=n-1;i>=1;i--)
+ 	{
+  		hasil = hasil*i;
+	}
+		}
+
+		document.getElementById('hasil').innerHTML = hasil;
+	}
+	</script>
+</script>
+</head>
+
+<body>
+<div class="preloader">
+  <div class="loading">
+    <img src="poi.gif" width="80">
+    <p>Harap Tunggu</p>
+  </div>
+</div>
+<div data-role=page id=win1>
+	<div data-role=navbar>
+	<ul>
+		<li><a href=#win1 onclick="ShowHide(this)">KALKULATOR</a></li>
+		<li><a href=#win2 onclick="ShowHide(this)">RGB</a></li>
+		<li><a href=#win3 onclick="ShowHide(this)">RANGKUMAN</a></li>
+	</ul>
+	</div>
+		<div data-role=header>
+		<a href="#popupMenu" data-rel="popup" data-transition="slideup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-gear ui-btn-icon-left ui-btn-a">Actions</a>
+<div data-role="popup" id="popupMenu" data-theme="b">
+        <ul data-role="listview" data-inset="true" style="min-width:210px;">
+            <li data-role="list-divider">MENU</li>
+            <li><a href="#win1">KALKULATOR</a></li>
+            <li><a href="#win2">RGB</a></li>
+            <li><a href="#win3">RANGKUMAN</a></li>
+        </ul>
+</div>
+		<h1>KALKULATOR</h1>
+		<h1>Pangkat</h1>
+<div pangkat style="font-size: 12px;">
+<p>Angka</p>
+<input type="text" id="bilangan">
+<p>Pangkat</p>
+<input type="text" id="pangkat">
+<a class="ui-btn ui-btn-inline" onclick="pangkat()">Pangkatkan</a>
+<p>Result</p>
+<div id="result"></div>
+</div>
+<br>
+<br>
+<p>-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
+<h1>Factorial</h1>
+<div faktorial style="font-size: 12px">
+<p>Faktorial dari :</p>
+<input type="text" id="angka">
+<a class="ui-btn ui-btn-inline" onclick="faktorial()">Factorialkan</a>
+<p>Result</p>
+<div id="hasil"></div>
+<a href=#win2 >Lanjut ke RGB PICKER</a>
+</div>
+	</div>
+	<div data-role=content>
+
+	</div>
+
+	<div data-role=footer data-position=fixed>
+	<h1>TEST PPM</h1>
+	</div>
+</div>
+<div data-role=page id=win2>
+<div data-role=navbar>
+	<ul>
+		<li><a href=#win1 onclick="ShowHide(this)">KALKULATOR</a></li>
+		<li><a href=#win1 onclick="ShowHide(this)">RGB</a></li>
+		<li><a href=#win3 onclick="ShowHide(this)">RANGKUMAN</a></li>
+	</ul>
+	</div>
+	<div data-role=header>
+		<h1>RGB PICKER</h1>
+	</div>
+	<div data-role=content>
+<p>Link INPUT elements:
+<button class="jscolor
+    {valueElement:'valueInput', styleElement:'styleInput'}">
+    Click here to pick a color
+</button>
+
+<p>
+Value: <input id="valueInput" value="ff6699"><br>
+Style: <input id="styleInput">
+	</div>
+	<a href=#win3>lanjut ke halaman 3</a>
+	<br>
+	<a href=#win1>back</a>
+	<div data-role=footer data-position=fixed>
+	<h1>TEST PPM</h1>
+	</div>
+</div>
+<div data-role=page id=win3>
+<div data-role=navbar>
+	<ul>
+		<li><a href=#win1 onclick="ShowHide(this)">KALKULATOR</a></li>
+		<li><a href=#win1 onclick="ShowHide(this)">RGB</a></li>
+		<li><a href=#win3 onclick="ShowHide(this)">RANGKUMAN</a></li>
+	</ul>
+	</div>
+	<div data-role=header>
+		<h1>RANGKUMAN</h1>
+	</div>
+	<div data-role=content>
+		<center>RANGKUMAN SAYA BELAJAR PPM</center>
+		<div id=content style="font-size: 13px; text-align: center;">
+			saya disini telah belajar github, cara memasukkan file ke repositori github dan cara menggunakannya. kami juga telah belajar cara menggunakan jquery mobile seperti yang saya lakukan di test ini. ppm is the best
+		</div>
+		<table data-role="table" id="my-table">
+			<tb>Sejarah mobile device</tb>
+			<tb>Github</tb>
+			<tb>jquery</tb>
+</table>
+
+	</div>
+	<a href=#win2>back</a>
+	<div data-role=footer data-position=fixed>
+	<h1>TEST PPM</h1>
+	</div>
+</div>
+<body>
+</html>
